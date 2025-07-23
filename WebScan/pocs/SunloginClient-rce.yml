@@ -1,0 +1,5 @@
+name: SunloginClient_ping_RCE__CNVD_2022_10270
+rules:
+  - method: GET
+    path: /cgi-bin/rpc?action=verify-haras
+    expression: response.status == 200 && response.body.bcontains(b"verify_string")
